@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "Serving at http://localhost:3000"
+python2 -m SimpleHTTPServer 3000
+
