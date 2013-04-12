@@ -26,7 +26,16 @@ App.TableRoute = Ember.Route.extend({
 });
 
 App.TablesController = Ember.ArrayController.extend();
-App.FoodController = Ember.ArrayController.extend();
+App.FoodController = Ember.ArrayController.extend({
+  addFood: function(food) {
+    var table = this.controllerFor('table').get('model'),
+        tabItems = table.get('tab.tabItems');
+    tabItems.createRecord({
+      food: food,
+      cents:food.get('cents')
+    });
+  }
+});
 App.TableController = Ember.ObjectController.extend();
 App.TabController = Ember.ObjectController.extend();
 
