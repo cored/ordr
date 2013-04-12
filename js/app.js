@@ -26,6 +26,8 @@ App.TableRoute = Ember.Route.extend({
 });
 
 App.TablesController = Ember.ArrayController.extend();
+
+// Action definition 
 App.FoodController = Ember.ArrayController.extend({
   addFood: function(food) {
     var table = this.controllerFor('table').get('model'),
